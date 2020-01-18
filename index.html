@@ -7,22 +7,50 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
-        <style>
-            body {
-                flex-direction: column;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-        </style>
+        <link 
+            rel="stylesheet" 
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+            crossorigin="anonymous"
+        />
     </head>
     <body>
-        <h1 id = "headingTotal"></h1>
-        <input id="inputAmount">
-        <input id = "inputDesc" type="text">
-        <button id="btnCounter">+</button>
-        <div id = "expenseTable"></div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Xpense</a>
+        </nav>
+        
+        <div class="container-fluid bg-light" style="min-height: 100vh">
+            <div class = "container">
+                <div class = "jumbotron mt-4">
+                    <h1 id = "headingTotal"></h1>
+
+
+                    <div class = "input-group">
+                        <input id="inputAmount" class="form-control" type="text" placeholder="Amount Spent">
+                        <div class = "input-group-append">
+                            <div class = "input-group-text">₹</div>
+                        </div>
+                    </div>
+
+                    <div class = "input-group">
+                        <div class = "input-group-prepend">
+                            <div class = "input-group-text">@</div>
+                        </div>
+                        <input id="inputDesc" class="form-control" type="text" placeholder="Spent on">
+                        <div class = "input-group-append">
+                            <button id="btnCounter" type="button" class="btn btn-dark">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div id = "expenseTable"></div>
+            </div>
+        </div>
+
+
+
+
+        
 
 
         <script>
@@ -69,7 +97,7 @@
 
                 allExpenses.push(expenseItem)
 
-                
+
                 //console.table(allExpenses);
                 //add that value to totalExpense
                 totalExpense = totalExpense + expense;
